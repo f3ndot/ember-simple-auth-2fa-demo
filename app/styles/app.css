@@ -1,0 +1,53 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.center {
+  text-align: center;
+}
+
+.loginBox {
+  margin: auto;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 500px;
+  text-align: center;
+}
+.loginBox input {
+  display: block;
+  width: 80%;
+  font-size: 16px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+  margin: 5px auto;
+}
+.loginBox button[type=submit] {
+  background-color: steelBlue;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.error {
+  background-color: crimson;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.error .dismiss {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  line-height: 16px;
+  font-size: 16px;
+  margin-top: -11px;
+  padding: 3px 5px;
+  cursor: pointer;
+}

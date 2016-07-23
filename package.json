@@ -37,7 +37,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
-    "ember-welcome-page": "^1.0.1",
+    "ember-simple-auth": "git://github.com/simplabs/ember-simple-auth.git#fb8c8ad8884310b3711e41ba784b5e4e993d0c24",
     "loader.js": "^4.0.1"
   }
 }

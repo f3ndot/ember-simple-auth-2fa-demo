@@ -1,0 +1,13 @@
+<div class="center">
+  <form class="loginBox" {{action 'authenticate' on='submit'}}>
+    {{#if errorMessage}}
+      <div class="error">
+        {{errorMessage}}
+        <div class="dismiss" {{action 'dismissError'}}>&times;</div>
+      </div>
+    {{/if}}
+    {{input id='identification' placeholder='Username' value=identification}}
+    {{input id='password' placeholder='Password' type='password' value=password}}
+    <button type="submit">Login</button>
+  </form>
+</div>
