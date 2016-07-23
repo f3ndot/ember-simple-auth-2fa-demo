@@ -7,7 +7,7 @@ body {
 }
 
 .loginBox {
-  margin: auto;
+  margin: 15px auto;
   padding: 15px;
   background-color: #f5f5f5;
   border: 2px solid #ccc;
@@ -24,24 +24,43 @@ body {
   border: 2px solid #ccc;
   margin: 5px auto;
 }
-.loginBox button[type=submit] {
-  background-color: steelBlue;
+.btn {
+  background-color: white;
+  color: black;
   font-size: 16px;
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
-  color: white;
+  color: steelBlue;
   cursor: pointer;
 }
-.error {
-  background-color: crimson;
+.btn-small {
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.tiny-txt {
+  font-size: 12px;
+  color: #666;
+}
+
+.loginBox button[type=submit] {
+  background-color: steelBlue;
   color: white;
-  padding: 10px;
+}
+.message {
+  background-color: darkorange;
+  color: white;
+  padding: 10px 30px 10px 10px;
   border-radius: 5px;
   margin-bottom: 15px;
   position: relative;
 }
-.error .dismiss {
+.message p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.message .dismiss {
   position: absolute;
   right: 5px;
   top: 50%;
@@ -50,4 +69,7 @@ body {
   margin-top: -11px;
   padding: 3px 5px;
   cursor: pointer;
+}
+.message.error {
+  background-color: crimson;
 }

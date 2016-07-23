@@ -1,13 +1,35 @@
 <div class="center">
+  {{#unless hideDemoTip}}
+    {{!-- This isn't required for a real app. Duh --}}
+    <div class="message" style="width:800px;margin:auto;">
+      {{#unless twoFactorRequired}}
+        <p>Login with username <em>"adalovelace"</em> &amp; password <em>"password"</em> to demonstrate a two-factor flow.</p>
+        <p>You can also login with <em>"insecure_isaak"</em>, who does not have 2FA enabled.</p>
+      {{else}}
+        <p>Ok! Pretend you received an SMS message with the code <strong>158272</strong>.</p>
+      {{/unless}}
+      <button class="btn btn-small" {{action 'dismissTip'}}>Roger that!</button>
+    </div>
+  {{/unless}}
+
   <form class="loginBox" {{action 'authenticate' on='submit'}}>
     {{#if errorMessage}}
-      <div class="error">
+      <div class="message error">
         {{errorMessage}}
         <div class="dismiss" {{action 'dismissError'}}>&times;</div>
       </div>
     {{/if}}
-    {{input id='identification' placeholder='Username' value=identification}}
-    {{input id='password' placeholder='Password' type='password' value=password}}
-    <button type="submit">Login</button>
+    {{#if twoFactorRequired}}
+      <h3>Hold on there cowboy</h3>
+      <p>Please check your cellphone for a verification code sent by SMS</p>
+      {{input id='verificationCode' placeholder='Verification Code' value=verificationCode}}
+      <button class="btn" type="submit">Continue</button>
+      <br>
+      <a href="#" class="tiny-txt" {{action 'cancelLogin'}}>Actually, nevermind&hellip;</a>
+    {{else}}
+      {{input id='identification' placeholder='Username' value=identification}}
+      {{input id='password' placeholder='Password' type='password' value=password}}
+      <button class="btn" type="submit">Login</button>
+    {{/if}}
   </form>
 </div>
