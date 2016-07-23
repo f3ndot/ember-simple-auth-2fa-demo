@@ -73,3 +73,6 @@ body {
 .message.error {
   background-color: crimson;
 }
+footer {
+  margin-top: 100px;
+}

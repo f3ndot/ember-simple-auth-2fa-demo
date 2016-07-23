@@ -36,15 +36,18 @@ export default Ember.Controller.extend({
       this.get('session').authenticate('authenticator:oauth2', identification, password, undefined, headers).then(() => {
         this.transitionToRoute('index');
       }, (failedXhr) => {
+        // ember-simple-auth will reject with strings if something truly bad happens
         if (Ember.typeOf(failedXhr) === 'string') {
           this.set('errorMessage', failedXhr);
           return;
         }
+        // This is the "error" stating that a 2FA code is required
         if (failedXhr.getResponseHeader('X-JustinInc-OTP') === 'required') {
           this.set('twoFactorRequired', true);
           this.set('hideDemoTip', false); // not needed for a real app. duh.
           return;
         }
+        // The 2FA code was provided along with user & pass, but was wrong
         if (failedXhr.getResponseHeader('X-JustinInc-OTP') === 'invalid') {
           this.set('errorMessage', 'Verification code is missing, invalid or expired');
           return;
