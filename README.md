@@ -4,6 +4,10 @@ This simple demo application is meant to show how ember-simple-auth can integrat
 
 **You can visit the app live: https://www.justinbull.ca/ember-simple-auth-2fa-demo/**
 
+## Big Caveat!
+
+You will notice this app is powered by a version of ember-simple-auth **not yet released!** Version 1.2.0 will support the `rejectWithXhr` option and `authenticate` headers argument required to work with 2FA over OAuth 2.0
+
 ## Code of Interest
 
 The TL;DR is the use of `X-` headers in [LoginController](app/controllers/login.js) and turning on the `rejectWithXhr` option in the OAuth2 authenticator.
